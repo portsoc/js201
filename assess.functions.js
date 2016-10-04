@@ -108,3 +108,20 @@ QUnit.test("funcAddToAll",
         );
     }
 );
+
+
+QUnit.test("funcSideEffect",
+    function(assert) {
+        rememberThis("Apple");
+        assert.ok(
+          remembered == "Apple",
+          "Create a function rememberThis that accepts any variable and stores it in a 'global' variable called 'remembered'.  Each subsequent call to rememberThis should overwrite the value of 'remembered'."
+        );
+
+        rememberThis("Banana");
+        assert.ok( remembered == "Banana" );
+
+        rememberThis(1337);
+        assert.ok(remembered == 1337);
+    }
+);
