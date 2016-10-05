@@ -141,3 +141,36 @@ QUnit.test("dataArraySet2",
         )
     }
 );
+
+QUnit.test("dataJSONParse",
+    function(assert) {
+        assert.ok(
+            typeof jsonparse === "function",
+            "Create a jsonparse function that accepts a string with JSON data and returns the data as a Javascript value."
+        );
+        assert.strictEqual(
+            jsonparse("7"), 7
+        );
+        assert.deepEqual(
+            jsonparse('{"a":"b"}'), {a: "b"}
+        );
+    }
+);
+
+QUnit.test("dataJSONSerialize",
+    function(assert) {
+        assert.ok(
+            typeof jsonserialize === "function",
+            "Create a jsonserialize function that accepts a Javascript value and returns a string with JSON representation of the data."
+        );
+        assert.strictEqual(
+            jsonparse(jsonserialize("7")), "7"
+        );
+        assert.strictEqual(
+            jsonparse(jsonserialize(7)), 7
+        );
+        assert.deepEqual(
+            jsonparse(jsonserialize({a: "b"})), {a: "b"}
+        );
+    }
+);
