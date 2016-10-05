@@ -1,6 +1,6 @@
 # JavaScript Basics
 
-* Download a zip of this `basicjs` repository or (preferably) clone it thus:
+* Download a zip of this `ws_basicjs` repository or (preferably) clone it thus:
 ```bash
 git clone https://github.com/portsoc/ws_basicjs.git
 ```
