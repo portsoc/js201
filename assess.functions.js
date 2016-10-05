@@ -9,31 +9,6 @@ QUnit.test("funcFeelGood",
     }
 );
 
-QUnit.test("funcAdd",
-    function(assert) {
-        assert.ok(
-            add(7,17) == 24,
-            "Adding 7 and 17 should return 24."
-        );
-    }
-);
-
-QUnit.test("funcSubtract",
-    function(assert) {
-        assert.ok(
-            subtract(10,5) == 5,
-            "Create a subtract function that accepts two parameters and takes the second parameter from the first."
-        );
-        assert.ok(
-            subtract(84,27) == 57,
-            "Create a subtract function that accepts two parameters and takes the second parameter from the first."
-        );
-        assert.ok(
-            subtract(116,32) == 84,
-            "Create a subtract function that accepts two parameters and takes the second parameter from the first."
-        );
-    }
-);
 
 QUnit.test("funcAddAll",
     function(assert) {
@@ -115,7 +90,7 @@ QUnit.test("funcSideEffect",
         rememberThis("Apple");
         assert.ok(
           remembered == "Apple",
-          "Create a function rememberThis that accepts any variable and stores it in a 'global' variable called 'remembered'.  Each subsequent call to rememberThis should overwrite the value of 'remembered'."
+          "Create a function rememberThis that accepts any variable and stores it in a 'global' variable called 'remembered' (which you need to declare).  Each subsequent call to rememberThis should overwrite the value of 'remembered'."
         );
 
         rememberThis("Banana");
