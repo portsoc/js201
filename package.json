@@ -9,5 +9,8 @@
     "Jacek Kopecky <jacek@port.ac.uk>",
     "Matt Dennis <matt.dennis@port.ac.uk>"
   ],
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "jshintConfig": {
+    "globalstrict": true
+  }
 }
