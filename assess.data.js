@@ -38,21 +38,44 @@ QUnit.test("dataCheckObject",
     function(assert) {
         var x;
         assert.ok(
-            typeof checkObj === "function",
+            typeof checkObject === "function",
             "Create a checkObject function that accepts an object as a parameter and sets the object's property `checked` to `true`."
         );
 
         x = {};
-        checkObj(x);
+        checkObject(x);
         assert.strictEqual(
             x.checked, true
         )
 
         x = { a: 4, b: 5, c: [1,3,5] };
-        checkObj(x);
+        checkObject(x);
         assert.deepEqual(
             x,
             { a: 4, b: 5, c: [1,3,5], checked: true }
+        )
+    }
+);
+
+QUnit.test("dataCheckObjectInside",
+    function(assert) {
+        var x;
+        assert.ok(
+            typeof checkObjectInside === "function",
+            "Create a checkObjectInside function that accepts an object as a parameter and if that object has a value in its `data` property, it sets that inner object's property `checked` to `true`."
+        );
+
+        x = {};
+        checkObjectInside(x);
+        assert.deepEqual(
+            x, {}
+        )
+
+        x = { time: 12345, data: {name: "Jack"} };
+        checkObjectInside(x);
+        assert.deepEqual(
+            x,
+            { time: 12345, data: {name: "Jack", checked: true } }
         )
     }
 );
