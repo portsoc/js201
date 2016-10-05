@@ -90,7 +90,7 @@ QUnit.test("funcSideEffect",
         rememberThis("Apple");
         assert.ok(
           remembered == "Apple",
-          "Create a function rememberThis that accepts any variable and stores it in a 'global' variable called 'remembered'.  Each subsequent call to rememberThis should overwrite the value of 'remembered'."
+          "Create a function rememberThis that accepts any variable and stores it in a 'global' variable called 'remembered' (which you need to declare).  Each subsequent call to rememberThis should overwrite the value of 'remembered'."
         );
 
         rememberThis("Banana");
