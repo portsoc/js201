@@ -1,4 +1,4 @@
-QUnit.module( "Data" );
+QUnit.module("Data");
 
 QUnit.test("dataAdd",
     function(assert) {
@@ -48,11 +48,19 @@ QUnit.test("dataCheckObject",
             x.checked, true
         )
 
-        x = { a: 4, b: 5, c: [1,3,5] };
+        x = {
+            a: 4,
+            b: 5,
+            c: [1, 3, 5]
+        };
         checkObject(x);
         assert.deepEqual(
-            x,
-            { a: 4, b: 5, c: [1,3,5], checked: true }
+            x, {
+                a: 4,
+                b: 5,
+                c: [1, 3, 5],
+                checked: true
+            }
         )
     }
 );
@@ -71,11 +79,21 @@ QUnit.test("dataCheckObjectInside",
             x, {}
         )
 
-        x = { time: 12345, data: {name: "Jack"} };
+        x = {
+            time: 12345,
+            data: {
+                name: "Jack"
+            }
+        };
         checkObjectInside(x);
         assert.deepEqual(
-            x,
-            { time: 12345, data: {name: "Jack", checked: true } }
+            x, {
+                time: 12345,
+                data: {
+                    name: "Jack",
+                    checked: true
+                }
+            }
         )
     }
 );
@@ -88,18 +106,16 @@ QUnit.test("dataArraySet",
             "Create an arraySet function that accepts three parameters, where the first one is an array and the second one a number, and puts the value of the third parameter into the array at an index specified by the second parameter, if such an index is already in the array."
         );
 
-        x = [1,2,3];
+        x = [1, 2, 3];
         arraySet(x, 2, 'a');
         assert.deepEqual(
-            x,
-            [1,2,'a']
+            x, [1, 2, 'a']
         )
 
-        x = [1,2,3];
+        x = [1, 2, 3];
         arraySet(x, 0, 'a');
         assert.deepEqual(
-            x,
-            ['a',2,3]
+            x, ['a', 2, 3]
         )
     }
 );
@@ -108,69 +124,34 @@ QUnit.test("dataArraySet2",
     function(assert) {
         var x;
 
-        x = [1,2,3];
+        x = [1, 2, 3];
         arraySet(x, 3, 'a');
         assert.deepEqual(
-            x,
-            [1,2,3],
+            x, [1, 2, 3],
             "arraySet should do nothing if the index is outside the array"
         )
 
-        x = [1,2,3];
+        x = [1, 2, 3];
         arraySet(x, -1, 'a');
         assert.deepEqual(
-            x,
-            [1,2,3],
+            x, [1, 2, 3],
             "arraySet should do nothing if the index is outside the array"
         )
 
-        x = [1,2,3];
+        x = [1, 2, 3];
         arraySet(x, 'not a number', 'a');
         assert.deepEqual(
-            x,
-            [1,2,3],
+            x, [1, 2, 3],
             "arraySet should do nothing if the index is not a number"
         )
 
-        x = [1,2,3];
+        x = [1, 2, 3];
         arraySet(x, 1.3, 'a');
         assert.deepEqual(
-            [x, x[1.3]],
-            [[1,2,3], undefined],
+            [x, x[1.3]], [
+                [1, 2, 3], undefined
+            ],
             "arraySet should do nothing if the index is not an integer number"
         )
-    }
-);
-
-QUnit.test("dataJSONParse",
-    function(assert) {
-        assert.ok(
-            typeof jsonparse === "function",
-            "Create a jsonparse function that accepts a string with JSON data and returns the data as a Javascript value."
-        );
-        assert.strictEqual(
-            jsonparse("7"), 7
-        );
-        assert.deepEqual(
-            jsonparse('{"a":"b"}'), {a: "b"}
-        );
-    }
-);
-
-QUnit.test("dataJSONSerialize",
-    function(assert) {
-        assert.ok(
-            typeof jsonserialize === "function",
-            "Create a jsonserialize function that accepts a Javascript value and returns a string with JSON representation of the data."
-        );
-        assert.strictEqual(
-            jsonparse(jsonserialize("7")), "7"
-        );
-        assert.strictEqual(
-            jsonparse(jsonserialize(7)), 7
-        );
-        assert.deepEqual(
-            jsonparse(jsonserialize({a: "b"})), {a: "b"}
-        );
     }
 );
