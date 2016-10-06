@@ -70,7 +70,7 @@ QUnit.test("dataCheckObjectInside",
         var x;
         assert.ok(
             typeof checkObjectInside === "function",
-            "Create a checkObjectInside function that accepts an object as a parameter and if that object has a value in its `data` property, it sets that inner object's property `checked` to `true`."
+            "Create a checkObjectInside function that accepts an object as a parameter and if that object has an object value in its `data` property, it sets that inner object's property `checked` to `true`."
         );
 
         x = {};
