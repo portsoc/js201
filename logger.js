@@ -18,8 +18,9 @@ var
       "vendor": navigator.vendor,
       "product": navigator.product,
       "userAgent": navigator.userAgent,
-    }
-
+    },
+    "testsSucceeded": [],
+    "testsFailed": [],
   };
 
 /**
@@ -40,6 +41,8 @@ QUnit.log(
     // record the individual test
     tests.push(details);
 
+    runRecord[details.result ? "testsSucceeded" : "testsFailed"]
+      .push(details.moduleid + '/' + details.name + '#' + details.order);
   }
 );
 
