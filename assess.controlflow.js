@@ -8,17 +8,14 @@ QUnit.test("nArray",
     function(assert) {
         assert.ok(
             typeof nArray === "function",
-            "Write a function \"nArray\" that takes a parameter n"
+            "Write a function \"nArray\" that takes a parameter n and returns an array with n numbers. The numbers in the array should increase from 1 to n."
         );
 
         var array1 = nArray(3);
         var array2 = [1, 2, 3];
 
-        let is_same = compare(array1, array2);
-
         assert.ok(
-            is_same,
-            "Insert n numbers into an array.  The numbers inserted should increase from 1 to n."
+            compare(array1, array2)
         );
 
     }
