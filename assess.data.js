@@ -120,12 +120,6 @@ QUnit.test("dataArraySet",
         assert.deepEqual(
             x, ['a', 2, 3]
         )
-    }
-);
-
-QUnit.test("dataArraySet2",
-    function(assert) {
-        var x;
 
         x = [1, 2, 3];
         arraySet(x, 3, 'a');
