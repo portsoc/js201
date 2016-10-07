@@ -18,8 +18,9 @@ var
       "vendor": navigator.vendor,
       "product": navigator.product,
       "userAgent": navigator.userAgent,
-    }
-
+    },
+    "testsSucceeded": [],
+    "testsFailed": [],
   };
 
 /**
@@ -40,6 +41,8 @@ QUnit.log(
     // record the individual test
     tests.push(details);
 
+    runRecord[details.result ? "testsSucceeded" : "testsFailed"]
+      .push(details.moduleid + '/' + details.name + '#' + details.order);
   }
 );
 
@@ -51,7 +54,7 @@ QUnit.done(function( details ) {
   addStudent();
   addModules();
   addRunRecord();
-  addTests();
+  // addTests();
 });
 
 function sendData(what, url) {
@@ -66,13 +69,13 @@ function addRunRecord() {
   sendData( runRecord, svr+"/runs/" );
 }
 
-
-function addTests() {
-  var url = svr + "/records/";
-  for (var t=0; t<tests.length; t++) {
-    sendData(tests[t], url);
-  }
-}
+// this overloads the server
+// function addTests() {
+//   var url = svr + "/records/";
+//   for (var t=0; t<tests.length; t++) {
+//     sendData(tests[t], url);
+//   }
+// }
 
 function addStudent() {
     sendData(
