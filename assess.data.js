@@ -9,6 +9,9 @@ QUnit.test("dataAdd",
         assert.strictEqual(
             add(7, 17), 24
         );
+        assert.strictEqual(
+            add(-7, -17), -24
+        );
         assert.ok(
             add(.1, .2) > .299999
         );
