@@ -66,7 +66,7 @@ QUnit.test("divisors",
 
         assert.ok(
             is_same,
-            "Return a new array containing only the numbers in the first array that are exactly divisible by the second array."
+            "Return a new array containing only the numbers in the first array that are exactly divisible by the second parameter."
         );
 
     }
