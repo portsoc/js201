@@ -1,4 +1,4 @@
-var
+let
   svr = "http://rjb.soc.port.ac.uk",
   now = Date.now(),
   runid = "run" + id() + now,
@@ -58,7 +58,7 @@ QUnit.done(function( details ) {
 });
 
 function sendData(what, url) {
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Accept", "application/json");
   xhr.setRequestHeader("Content-type", "application/json");
@@ -90,7 +90,7 @@ function addStudent() {
 
 
 function addModules() {
-  var url = svr + "/modules/";
+  let url = svr + "/modules/";
   for (var key in modules) {
     if (modules.hasOwnProperty(key)) {
       sendData(
