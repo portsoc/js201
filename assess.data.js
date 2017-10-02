@@ -39,13 +39,13 @@ QUnit.test("dataSubtract",
 
 QUnit.test("dataCheckObject",
     function(assert) {
-        var x;
+        let x;
         assert.ok(
             typeof checkObject === "function",
             "Create a checkObject function that accepts an object as a parameter and sets the object's property `checked` to `true`."
         );
 
-        x = {};
+        let x = {};
         checkObject(x);
         assert.strictEqual(
             x.checked, true
@@ -70,7 +70,7 @@ QUnit.test("dataCheckObject",
 
 QUnit.test("dataCheckObjectInside",
     function(assert) {
-        var x;
+        let x;
         assert.ok(
             typeof checkObjectInside === "function",
             "Create a checkObjectInside function that accepts an object as a parameter and if that object has an object value in its `data` property, it sets that inner object's property `checked` to `true`."
@@ -103,7 +103,7 @@ QUnit.test("dataCheckObjectInside",
 
 QUnit.test("dataArraySet",
     function(assert) {
-        var x;
+        let x;
         assert.ok(
             typeof arraySet === "function",
             "Create an arraySet function that accepts three parameters, where the first one is an array and the second one a number, and puts the value of the third parameter into the array at an index specified by the second parameter, if such an index is already in the array."

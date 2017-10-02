@@ -11,8 +11,8 @@ QUnit.test("nArray",
             "Write a function \"nArray\" that takes a parameter n and returns an array with n numbers. The numbers in the array should increase from 1 to n."
         );
 
-        var array1 = nArray(3);
-        var array2 = [1, 2, 3];
+        let array1 = nArray(3);
+        let array2 = [1, 2, 3];
 
         assert.ok(
             compare(array1, array2)
@@ -56,8 +56,8 @@ QUnit.test("divisors",
             "Write a function \"divisors\" that takes takes two parameters, an array of numbers and a divisor."
         );
 
-        var array1 = divisors([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
-        var array2 = [3, 6, 9];
+        let array1 = divisors([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
+        let array2 = [3, 6, 9];
 
         let is_same = compare(array1, array2);
 
@@ -77,8 +77,8 @@ QUnit.test("multiples",
             "Write a function\"multiples\" that takes two parameters n,m"
         );
 
-        var array1 = multiples(9, 3);
-        var array2 = [3, 6, 9, 12, 15, 18, 21, 24, 27];
+        let array1 = multiples(9, 3);
+        let array2 = [3, 6, 9, 12, 15, 18, 21, 24, 27];
 
 
         let is_same = compare(array1, array2);
