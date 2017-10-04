@@ -1,7 +1,7 @@
 let
   svr = "http://rjb.soc.port.ac.uk",
   now = Date.now(),
-  runid = "run" + id() + now,
+  runid = "run " + id() + " " + now,
   order = 0,
   tests = [],
   modules = {},
@@ -9,7 +9,7 @@ let
   runRecord = {
     "id": runid,
     "uid": id(),
-    "topic": "topic"+window.topic,
+    "topic": window.topic,
     "time": now,
     "browser": {
       // record details about what kind of dev platform is being used
@@ -24,12 +24,12 @@ let
   };
 
 /**
- * This gets called every time a unit test runs (pass or fail)
+ * This gets called every time a unit test assertion runs (pass or fail)
  */
 QUnit.log(
   function( details ) {
     // ensure whatever this module is is recorded in the list of modules.
-    var key = details.module.toLowerCase().replace(/[^a-zA-Z\d]/gi, "_");
+    let key = details.module.toLowerCase().replace(/[^a-zA-Z\d]/gi, "_");
     modules[key] = details.module;
 
     // record test instance details
@@ -40,11 +40,25 @@ QUnit.log(
 
     // record the individual test
     tests.push(details);
-
-    runRecord[details.result ? "testsSucceeded" : "testsFailed"]
-      .push(details.moduleid + '/' + details.name + '#' + details.order);
   }
 );
+
+/**
+ * This gets called every time a whole unit test runs (pass or fail)
+ */
+QUnit.testDone(function( details ) {
+    // ensure whatever this module is is recorded in the list of modules.
+    let moduleid = details.module.toLowerCase().replace(/[^a-zA-Z\d]/gi, "_");
+
+    let testName = moduleid + '/' + details.name;
+
+    // if a test fails any assertion, it will be recorded as failed
+    if (details.failed) {
+      runRecord.testsFailed.push(testName);
+    } else {
+      runRecord.testsSucceeded.push(testName);
+    }
+});
 
 /**
  * This gets called after the last test has run.
@@ -91,7 +105,7 @@ function addStudent() {
 
 function addModules() {
   let url = svr + "/modules/";
-  for (var key in modules) {
+  for (let key in modules) {
     if (modules.hasOwnProperty(key)) {
       sendData(
         {
