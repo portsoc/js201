@@ -45,7 +45,7 @@ QUnit.test("dataCheckObject",
             "Create a checkObject function that accepts an object as a parameter and sets the object's property `checked` to `true`."
         );
 
-        let x = {};
+        x = {};
         checkObject(x);
         assert.strictEqual(
             x.checked, true
