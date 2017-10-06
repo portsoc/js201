@@ -10,6 +10,10 @@ QUnit.test("Change the id method in index.js to return your student ID.",
             id() == "Replace This With Your Student ID",
             "This test will pass as soon as the id function returns anything other than the default value.  You should make sure it returns your student ID!"
         );
+        assert.notOk(
+            id() == "UP654321",
+            "This second test will pass as soon as the id function returns anything other than the other default value."
+        );
     }
 );
 
