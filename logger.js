@@ -51,6 +51,7 @@ QUnit.testDone(function( details ) {
     let moduleid = details.module.toLowerCase().replace(/[^a-zA-Z\d]/gi, "_");
 
     let testName = moduleid + '/' + details.name;
+    if (testName.length > 70) testName = testName.substring(0, 69) + '…';
 
     // if a test fails any assertion, it will be recorded as failed
     if (details.failed) {
