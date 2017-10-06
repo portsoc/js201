@@ -99,6 +99,11 @@ QUnit.test("funcCompareArrays",
             compare([4, 7, 11, 17], [109]),
             "totally false"
         );
+
+        assert.notOk(
+            compare([1, 2, 3], [1, 4, 3]),
+            "return false because more than just the first or last index should be compared."
+        );
     }
 );
 
