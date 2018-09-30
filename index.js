@@ -98,8 +98,37 @@ function rememberThis(variable){
 
 function nArray(n){
     let array = [];
-    for (var i = 0; i < n; i++) {
+    for (var i = 1; i <= n; i++) {
         array.push(i);
     }
     return array
+}
+
+function addAllOpt(array){
+    if (array == null){
+        return 0
+    }
+    else if (array === []) {
+        return 0
+    }
+    else {
+        return addAll(array)
+    }
+}
+
+function divisors(array, divisor) {
+    let new_array = [];
+    for (const value in array){
+        if ((array[value] % divisor) === 0){
+            new_array.push(array[value])
+        }
+    }
+}
+
+function multiples(n, m){
+    let new_array = [];
+    for (var i = 1; i <= n; i++){
+        new_array.push(i*m)
+    }
+    return new_array
 }
