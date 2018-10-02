@@ -73,11 +73,13 @@ function largest(array){
 }
 
 function compare(array_1, array_2) {
-    console.log(array_1, array_2);
     for (const value in array_1) {
-        if (!(value in array_2)) {
+        if (!(array_2.includes(array_1[value]))){
             return false;
         }
+        /*if (!(value in array_2)) {
+            return false;
+        }*/
         if (!(array_1[value] === array_2[value])) {
             return false;
         }
@@ -123,6 +125,10 @@ function divisors(array, divisor) {
             new_array.push(array[value])
         }
     }
+}
+
+function multiples_blank(n, m){
+
 }
 
 function multiples(n, m){
