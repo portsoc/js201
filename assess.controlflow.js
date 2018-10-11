@@ -56,7 +56,15 @@ QUnit.test("divisors",
             "Write a function \"divisors\" that takes takes two parameters, an array of numbers and a divisor."
         );
 
+        let test_return = divisors();
+
+        assert.ok(
+            typeof test_return === "object",
+            "Make sure your function returns something"
+        );
+
         let array1 = divisors([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
+
         let array2 = [3, 6, 9];
 
         let is_same = compare(array1, array2);
