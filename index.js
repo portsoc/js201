@@ -74,7 +74,10 @@ function largest(array){
 
 function compare(array_1, array_2) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(array_1, array_2);
+=======
+>>>>>>> parent of c97c64c... update
 =======
 >>>>>>> parent of c97c64c... update
     for (const value in array_1) {
