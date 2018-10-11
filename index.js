@@ -73,9 +73,6 @@ function largest(array){
 }
 
 function compare(array_1, array_2) {
-    if (array_1.length !== array_2.length){
-        return false;
-    }
     for (const value in array_1) {
         if (!(array_2.includes(array_1[value]))){
             return false;
