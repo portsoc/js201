@@ -10,27 +10,27 @@
  */
 
 'use strict';
-var remembered;
 
 function id() {
-    return "UP857256";
+    return "Replace This With Your Student ID";
     // e.g. return "UP654321";
 }
 
 function fn() {
-    return "Sam";
+    return "Replace This With Your First Name";
 }
 
 function sn() {
-    return "Riches";
+    return "Replace This With Your Surname";
 }
 
-function add(first_val, second_val) {
+function example() {
     // replace this example with
     // your first function then
     // add more below as necessary.
-    return first_val + second_val;
+    return;
 }
+<<<<<<< HEAD
 
 function subtract(first_val, second_val) {
     return first_val - second_val
@@ -109,3 +109,5 @@ function nArray(n){
     }
     return array
 }
+=======
+>>>>>>> parent of 654dd1d... main
