@@ -342,6 +342,17 @@ test(
       compare([1, 2, 3], [1, 4, 3]),
       'return false because more than just the first or last index should be compared.',
     );
+
+    assert.ok(
+      compare([], []),
+      "Two empty arrays should be the same"
+    );
+
+    assert.notOk(
+      compare([], [1,2,3]),
+      "An empty array is not the same as a filled array"
+    );
+
   },
 );
 
