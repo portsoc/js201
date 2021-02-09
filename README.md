@@ -1,8 +1,6 @@
-# JavaScript Basics
+# JavaScript Basics Unit Tests
 
-* Download a zip of this `ws_basicjs` repository or (preferably) clone it thus:
-```bash
-git clone https://github.com/portsoc/ws_basicjs.git
-```
-*  From your new local `ws_basicjs` folder, open `index.html` in a browser to see which tests fail.
-*  Edit `index.js`; improving and adding code until all the tests pass.
+* Download a zip of this repository or (preferably) use `git` or the `gh` command lien tool to clone it.
+* From your new local copy of the code, open `index.html` in a browser to see which tests fail.
+* Edit `index.js`; improving and adding code until all the tests pass.
+* You may also examine (but do not change) `test.js` to understand exactly what is being tested.
