@@ -376,6 +376,14 @@ test(
   function (assert) {
     if (!assert.functionExists('addToAll', ['arr', 'n'])) return;
 
+    const numbers = [1,2,3];
+    const numbersAfter = addToAll(numbers, 1);
+    assert.deepEqual(
+      numbers,
+      numbersAfter,
+      "You must alter the numbers in the original array; not create a new array that looks the same with the new numbers within it."
+    );
+
     assert.ok(
       compare(
         [2, 2],
@@ -396,7 +404,7 @@ test(
         addToAll([11, 22, 33], 44),
       ),
     );
-  },
+  }
 );
 
 
