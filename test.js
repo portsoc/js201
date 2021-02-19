@@ -303,6 +303,20 @@ test('Create a function called `largest` that accepts an array `arr` of numbers 
     assert.strictEqual(largest([1, 2, 3, 4, 5, 6, 7, 8, 3, -5]), 8);
     assert.strictEqual(largest([1]), 1);
     assert.strictEqual(largest([]), null);
+
+    assert.strictEqual(largest([1, 2, 22, 3]), 22, "If you use sort and then take the end number from the array, it's likely to go wrong and tell you that three is the largest number, not 22");
+
+    const candidate = [1, 2, 22, 3];
+    assert.strictEqual(largest(candidate), 22);
+    assert.deepEqual(candidate, [1, 2, 22, 3], "You must not alter the candidate array.  After the test, the array should be the same as when it began.");
+
+    try {
+      const candidate = Object.freeze([1, 2, 22, 3]);
+      largest(candidate)
+    } catch (error) {
+      assert.ok( false, "You must not alter the candidate array at all.  In this test the array is frozen so your code will crash out if you do anything other than read from it." );
+    }
+
   },
 );
 
