@@ -372,7 +372,7 @@ test(
 
 
 test(
-  'Create a function `addToAll` that accepts an array `arr` and a number `n` as parameters.  Assuming an array of numbers is passed, return the same array with the second parameter added to each number within the array - such that ([1,2,3], 1) should return [2,3,4].  NB this returns a new array and does not modify the original.',
+  'Create a function `addToAll` that accepts an array `arr` and a number `n` as parameters.  Assuming an array of numbers is passed, return the same array with the second parameter added to each number within the array - such that ([1,2,3], 1) should return [2,3,4].',
   function (assert) {
     if (!assert.functionExists('addToAll', ['arr', 'n'])) return;
 
