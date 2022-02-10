@@ -300,6 +300,7 @@ test('Create a function called `largest` that accepts an array `arr` of numbers 
     assert.strictEqual(largest([0, 1, 2]), 2);
     assert.strictEqual(largest([1, 1, 3]), 3);
     assert.strictEqual(largest([2, 2, 2]), 2);
+    assert.strictEqual(largest([-2, -32, -1.5]), -1.5);
     assert.strictEqual(largest([1, 2, 3, 4, 5, 6, 7, 8, 3, -5]), 8);
     assert.strictEqual(largest([1]), 1);
     assert.strictEqual(largest([]), null);
