@@ -379,7 +379,7 @@ test(
 
     const numbers = [1,2,3];
     const numbersAfter = addToAll(numbers, 1);
-    assert.deepEqual(
+    assert.strictEqual(
       numbers,
       numbersAfter,
       "You must alter the numbers in the original array; not create a new array that looks the same with the new numbers within it."
